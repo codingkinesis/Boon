@@ -1,0 +1,13 @@
+.user-layout {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: auto 1fr;
+
+    *.user-btn {
+        grid-area: 1 / 1 / 2 / 2;
+        justify-self: left;
+        margin: 20px;
+        padding: 10px 20px;
+    }
+}

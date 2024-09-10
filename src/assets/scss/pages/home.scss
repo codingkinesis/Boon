@@ -1,0 +1,26 @@
+.home-layout {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: 2fr 2fr 1fr;
+
+    *.user-btn {
+        grid-area: 1 / 1 / 2 / 2;
+        display: flex;
+        aspect-ratio: 3 / 2;
+        font-size: xxx-large;
+        justify-content: center;
+        align-items: center;
+    }
+    *.play-btn {
+        grid-area: 2 / 2 / 3 / 3;
+        display: flex;
+        height: 30px;
+        align-self: center;
+        justify-self: center;
+        font-size: xxx-large;
+        padding: 50px;
+        justify-content: center;
+        align-items: center;
+    }
+}

@@ -1,0 +1,30 @@
+.game-layout {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: auto minmax(500px, auto) auto;
+    grid-template-rows: minmax(50px, auto) minmax(500px, 1fr) minmax(100px, auto);
+
+    & .board-layout {
+        grid-area: 2 / 2 / 3 / 3;
+    }
+
+    & .your-hand {
+        position: absolute;
+        align-self: end;
+        justify-self: center;
+        height: 250px;
+    }
+
+    & .opponents-hands {
+        position: absolute;
+        width: 100vw;
+        height: 100px;
+        display: flex;
+        flex-direction: row;
+        align-self: start;
+        justify-self: center;
+        justify-content: space-around;
+        transform: rotate(180deg);
+    }
+
+}

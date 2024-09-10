@@ -1,0 +1,8 @@
+.card-layout {
+    height: 100%;
+    aspect-ratio: 5 / 7;
+
+    & .card-img {
+        object-fit: cover;
+    }
+}

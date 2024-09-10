@@ -1,0 +1,379 @@
+/*  Basics */
+* {
+  box-sizing: border-box; }
+
+html {
+  font-family: OpenSans, sans-serif;
+  font-size: 16px;
+  scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: burlywood; }
+
+img {
+  max-width: 100%; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  font-weight: normal;
+  padding: 0; }
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer; }
+
+a:hover {
+  text-decoration: underline; }
+
+button {
+  font-family: inherit;
+  cursor: pointer; }
+  button * {
+    pointer-events: none; }
+
+input {
+  text-align: inherit; }
+
+ul {
+  margin: 0;
+  padding: 0; }
+
+li {
+  padding: 0;
+  list-style-type: none; }
+
+/* MAC like scrollbar */
+::-webkit-scrollbar {
+  width: 0;
+  background-color: rgba(0, 0, 0, 0);
+  -webkit-border-radius: 100px; }
+
+::-webkit-scrollbar:hover {
+  background-color: rgba(0, 0, 0, 0.09); }
+
+::-webkit-scrollbar-thumb:vertical {
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-border-radius: 100px; }
+
+::-webkit-scrollbar-thumb:vertical:active {
+  -webkit-border-radius: 100px; }
+
+.main-app {
+  min-height: 100vh; }
+
+.main-app main {
+  flex-grow: 1;
+  width: 100%; }
+
+.main-app > footer {
+  background-color: #111;
+  color: white; }
+
+a.active {
+  color: #541193;
+  font-weight: 600; }
+
+/* Font Sizes */
+/* List */
+.clean-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+
+.clean-list > li {
+  margin: 0;
+  padding: 0; }
+
+/* Buttons */
+.simple-button {
+  background-color: chocolate;
+  color: black;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer; }
+
+.simple-button:disabled {
+  cursor: initial;
+  opacity: 0.2; }
+
+.simple-button:hover:not(:disabled) {
+  opacity: 1; }
+
+.medium-button {
+  font-size: 1.5rem; }
+
+/* Transitions */
+.fast-trans {
+  transition: 0.25s all; }
+
+.normal-trans {
+  transition: 0.4s all; }
+
+.slow-trans {
+  transition: 0.7s all; }
+
+/* Spacing */
+.p5 {
+  padding: 5px; }
+
+.p10 {
+  padding: 10px; }
+
+.p20 {
+  padding: 20px; }
+
+.m5 {
+  margin: 5px; }
+
+.m10 {
+  margin: 10px; }
+
+.m20 {
+  margin: 20px; }
+
+/* Normalize Background */
+.normBackground {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
+
+/* Dividing */
+.bottom-divider {
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid lightgray; }
+
+/* Others */
+.blurred {
+  filter: blur(4px); }
+
+.simple-form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 15px auto; }
+  .simple-form > *:not(:last-child) {
+    margin-bottom: 10px; }
+
+.simple-form :is(input:not([type="checkbox"]), button) {
+  padding: 5px 8px;
+  width: 100%; }
+
+.form-errors {
+  text-align: center;
+  margin-top: 24px;
+  color: red;
+  font-size: 15px; }
+
+.container {
+  /* max-width: 1100px; */
+  margin: 0 auto;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding: 0px; }
+
+/* GRIDS */
+.simple-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-gap: 10px; }
+
+@keyframes slide-in-out {
+  0% {
+    transform: translateY(150%); }
+  12% {
+    transform: translateY(0);
+    opacity: 1; }
+  90% {
+    transform: translateY(0);
+    opacity: 1; }
+  100% {
+    transform: translateY(150%);
+    opacity: 0; } }
+
+@keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes fadeout {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+@keyframes scalein {
+  from {
+    transform: scale(0.6); }
+  to {
+    transform: scale(1); } }
+
+@keyframes scaleout {
+  from {
+    transform: scale(1); }
+  to {
+    transform: scale(0.6); } }
+
+@keyframes scaleinsoft {
+  from {
+    transform: scale(0.8); }
+  to {
+    transform: scale(1); } }
+
+/* Pages */
+.home-layout {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  grid-template-rows: 2fr 2fr 1fr; }
+  .home-layout *.user-btn {
+    grid-area: 1 / 1 / 2 / 2;
+    display: flex;
+    aspect-ratio: 3 / 2;
+    font-size: xxx-large;
+    justify-content: center;
+    align-items: center; }
+  .home-layout *.play-btn {
+    grid-area: 2 / 2 / 3 / 3;
+    display: flex;
+    height: 30px;
+    align-self: center;
+    justify-self: center;
+    font-size: xxx-large;
+    padding: 50px;
+    justify-content: center;
+    align-items: center; }
+
+.user-layout {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  grid-template-rows: auto 1fr; }
+  .user-layout *.user-btn {
+    grid-area: 1 / 1 / 2 / 2;
+    justify-self: left;
+    margin: 20px;
+    padding: 10px 20px; }
+
+.game-layout {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: auto minmax(500px, auto) auto;
+  grid-template-rows: minmax(50px, auto) minmax(500px, 1fr) minmax(100px, auto); }
+  .game-layout .board-layout {
+    grid-area: 2 / 2 / 3 / 3; }
+  .game-layout .your-hand {
+    position: absolute;
+    align-self: end;
+    justify-self: center;
+    height: 250px; }
+  .game-layout .opponents-hands {
+    position: absolute;
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    align-self: start;
+    justify-self: center;
+    justify-content: space-around;
+    transform: rotate(180deg); }
+
+/* Components */
+.board-layout {
+  display: grid;
+  grid-template-areas: 1fr / 1fr;
+  aspect-ratio: 1 / 1;
+  justify-self: center; }
+  .board-layout .bg-img {
+    grid-area: 1 / 1 / -1 / -1;
+    object-fit: cover;
+    height: 100%; }
+  .board-layout .board-grid {
+    grid-area: 1 / 1 / -1 / -1;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    z-index: 1; }
+    .board-layout .board-grid .num {
+      opacity: 0;
+      display: grid;
+      height: 100%;
+      width: 100%;
+      font-size: 2rem;
+      justify-items: center;
+      align-items: center;
+      background-color: rgba(85, 107, 47, 0.7);
+      box-shadow: 4px 4px 10px -2px black; }
+    .board-layout .board-grid .tile {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      height: 100%;
+      width: 100%;
+      box-shadow: inset 0px 0px 6px 1px darkolivegreen;
+      background: olivedrab; }
+      .board-layout .board-grid .tile.b .tile-type,
+      .board-layout .board-grid .tile.w .tile-type,
+      .board-layout .board-grid .tile.c .tile-type,
+      .board-layout .board-grid .tile.s .tile-type,
+      .board-layout .board-grid .tile.m .tile-type,
+      .board-layout .board-grid .tile.r .tile-type {
+        grid-area: 1 / 1;
+        align-self: center; }
+      .board-layout .board-grid .tile.v .tile-type {
+        grid-area: 1 / 1;
+        height: 300%;
+        width: 300%;
+        object-fit: cover;
+        overflow: visible;
+        z-index: 2;
+        align-self: center; }
+      .board-layout .board-grid .tile .tile-coins {
+        grid-area: 1 / 1;
+        z-index: 4;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr; }
+        .board-layout .board-grid .tile .tile-coins > * {
+          align-self: center;
+          justify-self: center; }
+        .board-layout .board-grid .tile .tile-coins img {
+          grid-area: 1 / 1;
+          height: 75%;
+          width: 75%; }
+        .board-layout .board-grid .tile .tile-coins p {
+          grid-area: 1 / 1;
+          font-size: large; }
+
+.hand-layout {
+  display: flex;
+  align-content: end;
+  overflow: hidden;
+  height: 100%;
+  z-index: 10; }
+  .hand-layout li {
+    height: 80%;
+    margin-top: 30%;
+    transition: .3s; }
+    .hand-layout li:hover {
+      height: 100%;
+      margin-top: 0; }
+
+.card-layout {
+  height: 100%;
+  aspect-ratio: 5 / 7; }
+  .card-layout .card-img {
+    object-fit: cover; }

@@ -1,0 +1,15 @@
+/*  Basics */
+@import 'basics/base.scss';
+@import 'basics/helpers.scss';
+@import 'basics/layout.scss';
+@import 'basics/animations.scss';
+
+/* Pages */
+@import 'pages/home.scss';
+@import 'pages/user.scss';
+@import 'pages/game.scss';
+
+/* Components */
+@import 'cmps/board.scss';
+@import 'cmps/hand.scss';
+@import 'cmps/card.scss';
